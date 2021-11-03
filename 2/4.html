@@ -31,7 +31,35 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  
+
+  function getSum(firstNumber, secondNumber ) {
+    return firstNumber + secondNumber;  
+  }
+
+  function getDifference (firstNumber, secondNumber) {
+    if (firstNumber > secondNumber) {
+      return firstNumber-secondNumber ;
+    }
+    return secondNumber - firstNumber;
+  }
+
+  function getMultiplication(firstNumber, secondNumber) {
+    return firstNumber * secondNumber; 
+  }
+
+  function getDivision(firstNumber, secondNumber) {
+    return firstNumber / secondNumber;
+  }
+
+  // const firstNumber = +prompt ("Введите первое число");
+  // const secondNumber = +prompt("Введите первое число");
+
+  console.log (getSum(2, 5));
+  console.log(getDifference(2, 5));
+  console.log(getMultiplication(2, 5));
+  console.log(getDivision(2, 5));
+
 </script>
 </body>
 </html>
