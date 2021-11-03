@@ -32,10 +32,22 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
+/**
+ * Функция сложения двух чисел
+ * @param {number} firstNumber Первое число
+ * @param  {number} secondNumber Второе число
+ * @returns {number} Значение при выполнении операции сложения
+ */
   function getSum(firstNumber, secondNumber) {
-      return firstNumber + secondNumber;
-    }
+    return firstNumber + secondNumber;
+  }
 
+  /**
+   * Функция вычитания двух чисел
+   * @param {number} firstNumber Первое число
+   * @param  {number} secondNumber Второе число
+   * @returns {number} Значение при выполнении операции вычетания
+   */
   function getDifference(firstNumber, secondNumber) {
     if (firstNumber > secondNumber) {
       return firstNumber - secondNumber;
@@ -43,14 +55,33 @@ Infinity делать не нужно, однако, в случае если б
     return secondNumber - firstNumber;
   }
 
+  /**
+   * Функция умножения двух чисел
+   * @param {number} firstNumber Первое число
+   * @param  {number} secondNumber Второе число
+   * @returns {number} Значение при выполнении операции умножения
+   */
   function getMultiplication(firstNumber, secondNumber) {
     return firstNumber * secondNumber;
   }
 
+  /**
+     * Функция деления двух чисел
+     * @param {number} firstNumber Первое число
+     * @param  {number} secondNumber Второе число
+     * @returns {number} Значение при выполнении операции деления
+     */
   function getDivision(firstNumber, secondNumber) {
     return firstNumber / secondNumber;
   }
-
+  
+  /**
+   * Функция для выполнения  математических операций
+   * @param {number} firstNumber Первое число
+   * @param {number} secondNumber Второе число
+   * @param operation Оператор математической операции ("+", "-", "*", "/")
+   * @returns {number} В зависимости от оператора вызывает соответствующую фунцию для выполнения математической операции
+   */
   function mathOperation(firstNumber, secondNumber, operation) {
     if (operation =="+") {
       return getSum (firstNumber, secondNumber) ;

@@ -31,11 +31,21 @@
 <script>
   "use strict";
 
-  
+  /**
+   * Функция сложения двух чисел
+   * @param {number} firstNumber Первое число
+   * @param  {number} secondNumber Второе число
+   * @returns {number} Значение при выполнении операции сложения
+   */
   function getSum(firstNumber, secondNumber ) {
     return firstNumber + secondNumber;  
   }
-
+  /**
+   * Функция вычитания двух чисел
+   * @param {number} firstNumber Первое число
+   * @param  {number} secondNumber Второе число
+   * @returns {number} Значение при выполнении операции вычетания
+   */
   function getDifference (firstNumber, secondNumber) {
     if (firstNumber > secondNumber) {
       return firstNumber-secondNumber ;
@@ -43,10 +53,22 @@
     return secondNumber - firstNumber;
   }
 
+  /**
+   * Функция умножения двух чисел
+   * @param {number} firstNumber Первое число
+   * @param  {number} secondNumber Второе число
+   * @returns {number} Значение при выполнении операции умножения
+   */
   function getMultiplication(firstNumber, secondNumber) {
     return firstNumber * secondNumber; 
   }
 
+/**
+   * Функция деления двух чисел
+   * @param {number} firstNumber Первое число
+   * @param  {number} secondNumber Второе число
+   * @returns {number} Значение при выполнении операции деления
+   */
   function getDivision(firstNumber, secondNumber) {
     return firstNumber / secondNumber;
   }
