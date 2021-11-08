@@ -79,27 +79,27 @@ Infinity делать не нужно, однако, в случае если б
    * Функция для выполнения  математических операций
    * @param {number} firstNumber Первое число
    * @param {number} secondNumber Второе число
-   * @param operation Оператор математической операции ("+", "-", "*", "/")
+   * @param {string} operation Оператор математической операции ("+", "-", "*", "/")
    * @returns {number} В зависимости от оператора вызывает соответствующую фунцию для выполнения математической операции
    */
   function mathOperation(firstNumber, secondNumber, operation) {
-    if (operation =="+") {
+    if (operation === "+") {
       return getSum (firstNumber, secondNumber) ;
     }
-    else if (operation =="-") {
+    else if (operation === "-") {
       return getDifference(firstNumber, secondNumber);
     }
-    else if (operation == "*") {
+    else if (operation === "*") {
       return getMultiplication(firstNumber, secondNumber);
     }
-    else if (operation == "/") {
+    else if (operation === "/") {
       return getDifference(firstNumber, secondNumber);
     }
     return NaN; 
   }
 
   // проверка работы функции
-  console.log (mathOperation(5, 3, "*"));
+  console.log (mathOperation(5, 3, "*")); 
 
   
 </script>
