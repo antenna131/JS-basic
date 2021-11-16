@@ -50,7 +50,48 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function PostES5 (author, text) {
+    this.author = author;
+    this.text = text;
+    this.upDate = new Date();
+  }
+
+  PostES5.prototype = {
+    edit (text) {
+      this.text = text;
+      this.upDate = new Date();
+    }
+  }
+  // Создадим новый объект через конструктор
+  const postES5 = new PostES5 ('Jevgeni', 'Hello!');
+  console.log(postES5);
+  postES5.edit('Goodbye');
+  console.log(postES5);
+
+
+  // Функция - контруктор для закрепленного поста
+
+  function AttachedPostES5 (author, text) {
+    // наследуем параметры от PostES5
+    PostES5.call(this, author, text);
+    this.highlighted = false; 
+  }
+  // меняем прототип у закрепленного поста на прототип функции - конструктора
+  AttachedPostES5.prototype = Object.create (PostES5.prototype)
+  // Так как не осталось конструктора, его нужно добавить 
+  AttachedPostES5.prototype.constructor = AttachedPostES5;
+  //  Добавляем метод makeTextHighlighted 
+  AttachedPostES5.prototype.makeTextHighlighted = function () {
+    this.highlighted = true;
+    this.upDate = new Date(); 
+  }
+  // Создадим новый объект через конструктор
+  const attachedPostES5 = new AttachedPostES5 ('Anna', 'Hello, world!');
+  console.log(attachedPostES5);
+  attachedPostES5.makeTextHighlighted ();
+  attachedPostES5.edit('New text');
+  console.log(attachedPostES5);
+
 </script>
 </body>
 </html>
