@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
@@ -47,51 +49,87 @@
 что-нибудь пропустить.
 4. Если непонятно условие - задайте вопрос.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  function PostES5 (author, text) {
-    this.author = author;
-    this.text = text;
-    this.upDate = new Date();
-  }
-
-  PostES5.prototype = {
-    edit (text) {
+    function PostES5(author, text) {
+      this.author = author;
       this.text = text;
       this.upDate = new Date();
     }
-  }
-  // Создадим новый объект через конструктор
-  const postES5 = new PostES5 ('Jevgeni', 'Hello!');
-  console.log(postES5);
-  postES5.edit('Goodbye');
-  console.log(postES5);
+
+    PostES5.prototype = {
+      edit(text) {
+        this.text = text;
+        this.upDate = new Date();
+      }
+    }
+    // Создадим новый объект через конструктор
+    const postES5 = new PostES5('Jevgeni', 'Hello!');
+    console.log(postES5);
+    postES5.edit('Goodbye');
+    console.log(postES5);
 
 
-  // Функция - контруктор для закрепленного поста
+    // Функция - контруктор для закрепленного поста
 
-  function AttachedPostES5 (author, text) {
-    // наследуем параметры от PostES5
-    PostES5.call(this, author, text);
-    this.highlighted = false; 
-  }
-  // меняем прототип у закрепленного поста на прототип функции - конструктора
-  AttachedPostES5.prototype = Object.create (PostES5.prototype)
-  // Так как не осталось конструктора, его нужно добавить 
-  AttachedPostES5.prototype.constructor = AttachedPostES5;
-  //  Добавляем метод makeTextHighlighted 
-  AttachedPostES5.prototype.makeTextHighlighted = function () {
-    this.highlighted = true;
-    this.upDate = new Date(); 
-  }
-  // Создадим новый объект через конструктор
-  const attachedPostES5 = new AttachedPostES5 ('Anna', 'Hello, world!');
-  console.log(attachedPostES5);
-  attachedPostES5.makeTextHighlighted ();
-  attachedPostES5.edit('New text');
-  console.log(attachedPostES5);
+    function AttachedPostES5(author, text) {
+      // наследуем параметры от PostES5
+      PostES5.call(this, author, text);
+      this.highlighted = false;
+    }
+    // меняем прототип у закрепленного поста на прототип функции - конструктора
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    // Так как не осталось конструктора, его нужно добавить 
+    AttachedPostES5.prototype.constructor = AttachedPostES5;
+    //  Добавляем метод makeTextHighlighted 
+    AttachedPostES5.prototype.makeTextHighlighted = function () {
+      this.highlighted = true;
+      this.upDate = new Date();
+    }
+    // Создадим новый объект через конструктор
+    const attachedPostES5 = new AttachedPostES5('Anna', 'Hello, world!');
+    console.log(attachedPostES5);
+    attachedPostES5.makeTextHighlighted();
+    attachedPostES5.edit('New text');
+    console.log(attachedPostES5);
 
-</script>
+    // ES6
+
+    class PostES6 {
+      constructor(author, text) {
+        this.author = author;
+        this.text = text;
+        this.upDate = new Date();
+      }
+      edit(text) {
+        this.text = text;
+        this.upDate = new Date();
+      };
+    }
+
+    const postES6 = new PostES6('Tatjana', 'Life is beautiful');
+    console.log(postES6);
+    postES6.edit('Life is wrong');
+    console.log(postES6);
+
+    // Закрепленный пост ES6
+    class AttachedPostES6 extends PostES6 {
+      highlighted = false;
+      makeTextHighlighted() {
+        this.highlighted = true;
+        this.upDate = new Date();
+      };
+    }
+    const attachedPostES6 = new AttachedPostES6('Maria', 'Next step');
+    console.log(attachedPostES6);
+    attachedPostES6.makeTextHighlighted();
+    attachedPostES6.edit('Step by step');
+    console.log(attachedPostES6);
+
+
+
+  </script>
 </body>
+
 </html>
