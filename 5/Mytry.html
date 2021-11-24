@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>
+        Кнопка
+    </button>
+    <div>Добавьте</div>
+    <button id="super-button" class="btn btn-large">btn</button>
+    <a href="#">Let's go!</a>
+
+    <p>Ghbdtntn</p>
+    <script>
+        const buttonEl = document.querySelector('button');
+        buttonEl.insertAdjacentHTML("beforebegin", "<u>hello</u>");
+        buttonEl.append('gq');        
+        buttonEl.prepend('img');
+        buttonEl.before('p');
+        buttonEl.after('button');
+
+        const divEl = document.querySelector('div');
+        divEl.replaceWith('привет');
+
+        const btnEl = document.getElementById('super-button');
+        console.log(btnEl);
+        btnEl.classList.add('hello');
+        btnEl.classList.remove('btn-large');
+        // btnEl.classList.toggle('hello');
+
+        const aEl = document.querySelector('a');
+        // aEl.onclick = function () {
+        //         console.log('Hello');
+        // }; не лучший вариант
+
+        aEl.addEventListener('click', () => {
+            console.log('Привет!');
+        });
+        aEl.addEventListener('click', () => {
+            console.log('Пока');
+        });
+
+        
+        
+
+
+        
+        
+    </script>
+
+</body>
+
+</html>
