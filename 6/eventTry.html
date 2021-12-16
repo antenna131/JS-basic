@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>
+            Первый инпут:
+            <input class="form-control" type="text">
+        </label>
+        <br>
+        <br>
+        <label>
+            Второй инпут:
+            <select class="form-control">
+                <option value=""></option>
+                <option value="1">Один</option>
+                <option value="2">Два</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <button>Отправить</button>
+    </form>
+    <script>
+        const formEl = document.querySelector('form');
+        const inputEl = document.querySelector('input');
+        formEl.addEventListener('submit', event => {
+            if (inputEl.value === '') {
+                event.preventDefault(); 
+            }
+        })
+    </script>
+</body>
+</html>
