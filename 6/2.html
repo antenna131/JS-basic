@@ -99,7 +99,25 @@
   Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
    */
 
-   document.querySelector('form')
+   const formEl = document.querySelector('form');
+   const formCheckEl = formEl.querySelectorAll('input,select');
+   formEl.addEventListener('submit', event => {
+     formCheckEl.forEach(formCheckEl =>{
+       if(formCheckEl.value === '') {
+         formCheckEl.classList.add('error');
+         event.preventDefault();
+       }
+     });
+   });
+
+   formEl.addEventListener('input', event => {
+     if (!event.target.classList.contains('form-control')){
+       return
+     }
+     event.target.value === ''
+     ?event.target.classList.add('error')
+     : event.target.classList.remove('error');
+   });
 
 
 </script>
