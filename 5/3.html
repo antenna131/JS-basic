@@ -80,7 +80,7 @@
     которому был совершен клик.
     */
     document.addEventListener('click', event => {
-      const classIndiv = event.target.classList.contains('.super_element')
+      const classIndiv = event.target.classList.contains('super_element')
         ? 'присутствует' : 'отстутствует';
       console.log(`Класс "super_element" ${classIndiv} в элементе "${event.target.tagName.toLowerCase()}".`);
     });
@@ -102,11 +102,14 @@
     по которой был произведен клик.
     Если клик был не по кнопке, то ничего выводить не нужно.
      */
-    const ulEls = document.querySelectorAll('ul');
-    const handler = event => console.log(event.target.textContent);
-    for (const ulEl of ulEls) {
-      ulEl.addEventListener('click', handler);
-    };
+    const ulEls = document.querySelector('ul').addEventListener('click', event => {
+      if (EventTarget.tagName!== "button") {
+        return;
+      }
+      console.log(event.target.textContent);
+    });
+    
+    
 
     /*
     6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только

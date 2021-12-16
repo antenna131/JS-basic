@@ -16,7 +16,15 @@
     <button id="super-button" class="btn btn-large">btn</button>
     <a href="#">Let's go!</a>
 
-    <p>Ghbdtntn</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <textarea name="" id="" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, earum.</textarea>
+    <div id="big_picture"></div>
+    <div id="gallery">
+        <img id="image_1" src="img/gallery/small/1.svg">
+        <img id="image_2" src="img/gallery/small/2.svg">
+        <img id="image_3" src="img/gallery/small/3.svg">
+    </div>
+
     <script>
         const buttonEl = document.querySelector('button');
         buttonEl.insertAdjacentHTML("beforebegin", "<u>hello</u>");
@@ -46,7 +54,81 @@
             console.log('Пока');
         });
 
+        function fu(x=0) {
+            let arr = [];
+            arr.push(x);
+            return arr;    
+        }
+
+        console.log(fu(9));
+
+        let h = 'hello';
+        let w = 'world';
+
+        function fun () {
+            return '!';            
+        }
+
+        let result = `${h} ${w}${fun()}`;
+         console.log(result);
+
+        const obj = {
+             name: 'Kolya',
+             age: 30,
+             isMan: true,
+             isCat: false,
+             func: function () {
+
+             },
+        };
+
+        const {name, age, func, ...rest} = obj;
+        console.log(rest);
+
+        function getInfo(name, age, ...rest) {
+            // getApi(rest);
+            return `${name}, ${age}`;
+        }
+        let res = getInfo(name, age);
+        console.log(res);
+
+        let arr = ['Kolya', 'Misha', 'Olya', 'Nastya'];
+        let [ k, o, ...alt] = arr;
+
+        let arr2 = ['Anya', 'Jevgeni'];
+
+        const newArr = [
+            ...arr,
+            ...arr2
+        ];
+
+        console.log(newArr);
+
+        function funct({x=10, y=20}) {
+            return x+y;
+        }
+
+        console.log(funct({x:100}));
+
+        function myProcessor() {
+            console.log("Загрузка завершена");
+        }
+        window.onload = myProcessor;
+
+        // Вырезание текста
+        document.addEventListener('cut', event => { //1.повесить обработчик 
+            const selection = document.getSelection(); //найти выделенное
+            event.clipboardData.setData('text/plain', selection.toString().toLocaleUpperCase());//выделенное поместить в буфер обмена, превратить в строку и при вставке БОЛЬШИМИ буквами
+            selection.deleteFromDocument();//чтоб удалился, иначе только скопируется
+            event.preventDefault();//чтоб не действовало по умолчанию, нужно добавить эту функцию
+        });
+
         
+
+
+
+
+
         
 
 
