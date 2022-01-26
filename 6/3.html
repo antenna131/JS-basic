@@ -45,7 +45,7 @@
     const starsEl = document.querySelector('.stars_container');
     starsEl.addEventListener('mouseover', event => {
       if (!event.target.classList.contains('fas')) {
-        return
+        return;
       }
       let stars = event.target;
       do {
@@ -66,7 +66,7 @@
      */
     starsEl.addEventListener('mouseout', event => {
       if (!event.target.classList.contains('fas')) {
-        return
+        return;
       }
       let stars = event.target;
       do {
